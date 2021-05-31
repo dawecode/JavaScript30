@@ -59,17 +59,8 @@
       return str
     }
 
-    const sortedBands = bands.sort((bandA, bandB) => {
+    const sortedBands = bands.sort((a, b) => removeArticles(a) > removeArticles(b) ? 1 : -1);
 
-      bandA = removeArticles(bandA)
-      bandB = removeArticles(bandB)
-      if (bandA < bandB) {
-        return -1
-      } else {
-        return 1
-      }
-      return 0
-    })
 
     console.log(sortedBands)
 
